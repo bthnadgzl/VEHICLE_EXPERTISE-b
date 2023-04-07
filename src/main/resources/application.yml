@@ -1,0 +1,59 @@
+# ---------- AUTOROLA CONFIG --------------
+server:
+  port : 8086
+  debug: true
+  error:
+    whitelabel:
+      enabled: false
+
+
+spring:
+  h2:
+    console.enabled: true
+    path: /h2-console
+    settings.trace: false
+    settings.web-allow-others: true
+  hibernate:
+    hbm2ddl:
+      auto=update:
+  datasource:
+    url: jdbc:h2:mem:expertise
+    username: sa
+    password: password23
+    driverClassName: org.h2.Driver
+    hikari:
+      pool-name: expertise-dbconnectionpool
+
+  jpa:
+    show-sql: true
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+
+autorola:
+  user-credential:
+    username: deleted
+    password: deleted
+  api-url:
+    baseUrl: https://assets.fm.autorolaapis.com
+    loginUrl: /login
+    fileUrl: /v2/files
+    vehicleUrl: /v2/vehicle
+fya:
+  user-credential:
+    username: deleted
+    password: deleted
+  api-url:
+    baseUrl: https://yolarkadasimapi.fiat.com.tr
+    loginUrl: /mobile/api/login
+    valuationUrl: /mobile/api/dynamic-valuation/valuation-result
+dealer-service:
+  user-credential:
+    username: deleted
+    password: deleted
+  api-url:
+    fiatUrl: https://dsiapi.now.tofas.com.tr/api/DealerService/GetDealerServiceInforamtion?brand=fiat&type=all
+    arjUrl: https://dsiapi.now.tofas.com.tr/api/DealerService/GetDealerServiceInforamtion?brand=arj&type=all
+
+
